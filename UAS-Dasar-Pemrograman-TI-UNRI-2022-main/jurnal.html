@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List Jurnal</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="grey-modal-background" class="hidden"></div>
+
+<section>
+	<h1>Database Jurnal dengan Vanilla JS</h1>
+	<div data-container="books-table"></div>
+</section>
+
+<script type="application/javascript" src="js/application.js"></script>
+<script type="application/javascript">
+	let books = [
+		new Book({
+			id: 1,
+			title: 'Based Design Mobile Learning Course on Android',
+			author: new Author({name: 'Liranti Rahmelina'}),
+			isbn: "1978-0524-2528-6374"
+		}),
+		new Book({
+			id: 2,
+			title: 'Development of Sales Application Using QR Code',
+			author: new Author({name: 'Ricky Akbar, Husnil Kamil'}),
+			isbn: "1978-0524-2528-6374"
+		}),
+		new Book({
+			id: 3,
+			title: 'Perancangan dan Implementasi Web Service pada Aplikasi Permainan ',
+			author: new Author({name: 'Gilang Arsya Priyatna Zaman'}),
+			isbn: "1978-0524-2528-6374"
+		}),
+		new Book({
+			id: 4,
+			title: 'Perancangan Augmented Reality Media Markerless PoI',
+			author: new Author({name: 'Abraham Christover Manuputty'}),
+			isbn: "1978-0524-2528-6374"
+		}),
+		new Book({
+			id: 5,
+			title: 'Pengembangan SIG Berbasis Node.JS untuk Pemetaan Mesin dan Tracking',
+			author: new Author({name: 'Rachmat Fajrin'}),
+			isbn: "1978-0524-2528-6374"
+		})
+	];
+
+	const bookTables =
+		document.querySelectorAll('[data-container="books-table"]');
+	for(let i = 0; i < bookTables.length; i++){
+		new BooksTable({
+			books: books,
+			containerElement: bookTables[i]
+		});
+	}
+</script>
+</body>
+</html>
